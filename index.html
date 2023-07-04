@@ -10,17 +10,17 @@
     <!-- FontGoogle -->
     <link href="https: //fonts.googleapis.com/css2? familia= Oxígeno:peso@400;700 & display=swap" rel="stylesheet"></link>
 </head>
-<body>
+<body class="body-dark">
     <div class="reverse">
-            <aside class="flex-container column">
+            <aside class="flex-container column aside-dark">
             <!-- ASIDE IMAGE -->
-            <section class="hidden">
+            <section class="" id="aside-image">
                 <h3>IMAGEN</h3>
                 <form>
                     <!-- URL -->
-                    <p class="letter-subtittle">URL</p>
+                    <p class="letter-subtittle" id="url-image">URL</p>
                     <label>
-                        <div class="container-input">
+                        <div class="container-input container-input-dark">
                             <input type="text" id="urlImagen">
                         </div>
                     </label>
@@ -31,9 +31,8 @@
                         </p>
                         <div class="flex-container">
                             <label>
-                                <div class="container-input type-color">
-                                    <input type="color">
-                                    <span>#FFFF</span>
+                                <div class="container-input container-input-dark type-color">
+                                    <input type="color"> <span>#FFFFFF</span>
                                 </div>
                             </label>
                             <label class="select-background">
@@ -90,7 +89,7 @@
                             <input type="range">
                         </label>
                         <!-- BUTTON RESET -->
-                        <button type="reset" class="button-filter">
+                        <button type="reset" class="button-reset">
                             Reestablecer filtros
                         </button>
                     </div>
@@ -98,7 +97,7 @@
                 </form>
             </section>
             <!-- ASIDE TEXT -->
-            <section class="hidde">
+            <section class="hidden" id="aside-text">
                 <h3>TEXTO</h3>
                 <form>
                     <!-- SUPERIOR -->
@@ -106,8 +105,10 @@
                         SUPERIOR
                     </p>
                     <label>
-                        <div class="container-input">
-                            <textarea name="top-text" id="topText" cols="26" rows="1">TOP TEXT</textarea>
+                        <div class="container-input container-input-dark">
+                            <textarea name="top-text" id="textareaTop" cols="26" rows="1">
+                                TEXTO SUPERIOR
+                            </textarea>
                         </div>
                     </label>
                     <label>
@@ -119,8 +120,10 @@
                         INFERIOR
                     </p>
                     <label>
-                        <div class="container-input">
-                            <textarea name="bottom-text" id="bottomText" cols="26" rows="1">BOTTOM TEXT</textarea>
+                        <div class="container-input container-input-dark">
+                            <textarea name="bottom-text" id="textareaBottom" cols="26" rows="1">
+                                TEXTO INFERIOR
+                            </textarea>
                         </div>
                     </label>
                     <label>
@@ -165,7 +168,7 @@
                                 COLOR
                             </p>
                             <label>
-                                <div class="container-input type-color">
+                                <div class="container-input container-input-dark type-color">
                                     <input type="color"> <span>#000000</span>
                                 </div>
                             </label>
@@ -175,7 +178,7 @@
                                 FONDO
                             </p>
                             <label>
-                                <div class="container-input type-color">
+                                <div class="container-input container-input-dark type-color">
                                     <input type="color"> <span>#FFFFFF</span>
                                 </div>
                             </label>
@@ -224,51 +227,53 @@
     
     <div class="flex-container content">
         <!-- HEADER -->
-        <header class="flex-container column">
+        <header class="flex-container column header-dark">
             <h1>Generador de Memes</h1>
             <div class="flex-container container-button">
                 <!-- BUTTON IMAGE -->
-                <div class="button-header">
+                <button class="button-header button-dark" id="button-image">
                     <i class="fa-solid fa-file-image"></i>
                     Imagen
-                </div>
+                </button>
                 <!-- BUTTON TEXT -->
-                <div class="button-header">
+                <button class="button-header button-dark" id="button-text">
                     <i class="fa-solid fa-font"></i>
                     Texto
-                </div>
+                </button>
                 <!-- DARK MODE BUTTON -->
-                <div class="button-header">
+                <button class="button-header button-dark" id="button-mode-dark">
                     <i class="fa-regular fa-lightbulb"></i>
                     Modo oscuro
-                </div>
+                </button>
                 <!-- LIGHT MODE BUTTON  -->
-                <div class="button-header hidden">
+                <button class="button-header button-light hidden" id="button-mode-light">
                     <i class="fa-regular fa-lightbulb"></i>
                     Modo claro
-                </div>
+                </button>
             </div>
         </header>
         <!-- MAIN -->
         <main class="flex-container column">
             <div class="container-meme">
-                <p class="flex-container description">
-                    TOP TEXT
+                <p class="flex-container description" id="top-text">
+                    TEXTO SUPERIOR
                 </p>
                 <figure>
                     <!-- IMAGE MEME -->
-                    <img src="" alt="">
+                    <img src="" alt="" id="image-meme">
                 </figure>
-                <p class="flex-container description">
-                    BOTTOM TEXT
+                <p class="flex-container description" id="bottom-text">
+                    TEXTO INFERIOR
                 </p>
             </div>
             <!-- DOWNLOAD BUTTON -->
-            <button class="button-download">
+            <button class="button-download" id="buttom-download">
                 <i class="fa-solid fa-download"></i>
                 Descargar meme
             </button>
         </main>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
