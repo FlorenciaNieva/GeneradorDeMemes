@@ -13,13 +13,211 @@
 <body>
     <div class="reverse">
             <aside class="flex-container column">
-            <!-- ASIDE IMAGEN -->
-            <section>
+            <!-- ASIDE IMAGE -->
+            <section class="hidden">
                 <h3>IMAGEN</h3>
+                <form>
+                    <!-- URL -->
+                    <p class="letter-subtittle">URL</p>
+                    <label>
+                        <div class="container-input">
+                            <input type="text" id="urlImagen">
+                        </div>
+                    </label>
+                    <!-- BACKGROUND -->
+                    <div class="flex-container column">
+                        <p class="letter-subtittle ">
+                            FONDO
+                        </p>
+                        <div class="flex-container">
+                            <label>
+                                <div class="container-input type-color">
+                                    <input type="color">
+                                    <span>#FFFF</span>
+                                </div>
+                            </label>
+                            <label class="select-background">
+                                <select name="mix-color" id="mixColor">
+                                    <option value="ninguno" selected>Ninguno</option>
+                                    <option value="aclarar">Aclarar</option>
+                                    <option value="oscurecer">Oscurecer</option>
+                                    <option value="diferencia">Diferencia</option>
+                                    <option value="luminosidad">Luminosidad</option>
+                                    <option value="multiplicar">Multiplicar</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- FILTER -->
+                    <p class="letter-subtittle filter">
+                        FILTROS
+                    </p>
+                    <div>
+                        <label class="column">
+                            BRILLO
+                        <input type="range">
+                        </label>
+                        <label class="column">
+                            OPACIDAD
+                            <input type="range">
+                        </label>
+                        <label class="column">
+                            CONTRASTE
+                            <input type="range">
+                        </label>
+                        <label class="column">
+                            DESENFOQUE
+                            <input type="range">
+                        </label>
+                        <label class="column">
+                            ESCALA DE GRISES
+                            <input type="range">
+                        </label>
+                        <label class="column">
+                            SEPIA
+                            <input type="range">
+                        </label>
+                        <label class="column">
+                            HUE
+                        <input type="range">
+                        </label>
+                        <label class="column">
+                            SATURADO
+                            <input type="range">
+                        </label>
+                        <label class="column">
+                            NEGATIVO
+                            <input type="range">
+                        </label>
+                        <!-- BUTTON RESET -->
+                        <button type="reset" class="button-filter">
+                            Reestablecer filtros
+                        </button>
+                    </div>
+                    
+                </form>
             </section>
             <!-- ASIDE TEXT -->
-            <section>
+            <section class="hidde">
                 <h3>TEXTO</h3>
+                <form>
+                    <!-- SUPERIOR -->
+                    <p class="letter-subtittle">
+                        SUPERIOR
+                    </p>
+                    <label>
+                        <div class="container-input">
+                            <textarea name="top-text" id="topText" cols="26" rows="1">TOP TEXT</textarea>
+                        </div>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="sin-superior" id="sin-superior">
+                        Sin texto superior
+                    </label>
+                    <!-- LOWER -->
+                    <p class="letter-subtittle">
+                        INFERIOR
+                    </p>
+                    <label>
+                        <div class="container-input">
+                            <textarea name="bottom-text" id="bottomText" cols="26" rows="1">BOTTOM TEXT</textarea>
+                        </div>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="sin-inferior" id="sin-inferior">
+                        Sin texto inferior
+                    </label>
+                    <!-- FONT -->
+                    <p class="letter-subtittle">
+                        FUENTE
+                    </p>
+                    <label>
+                        <select name="fuentes" id="fuentes">
+                            <option value="arial">Arial</option>
+                            <option value="arialBlack">Arial Black</option>
+                            <option value="americanTypewriter">American Typewriter</option>
+                            <option value="andaleMono">Andale Mono</option>
+                            <option value="comicSansMS">Comic Sans MS</option>
+                            <option value="helvetica">Helvetica</option>
+                            <option value="impact" selected>Impact</option>
+                            <option value="verdana">Verdana</option>
+                            <option value="timeNewRoman">Times New Roman</option>
+                        </select>
+                    </label>
+                    <div class="flex-container">
+                        <label>
+                            <input type="number" value="40" min="12" class="number-font">
+                        </label>
+                        <div class="container-justify">
+                            <i class="fa-solid fa-outdent"></i>
+                        </div>
+                        <div class="container-justify">
+                            <i class="fa-solid fa-align-justify"></i>
+                        </div>
+                        <div class="container-justify">
+                            <i class="fa-solid fa-indent"></i>
+                        </div>
+                    </div>
+                    <!-- COLOR -->
+                    <div class="flex-container space">
+                        <div class="column">
+                            <p class="letter-subtittle">
+                                COLOR
+                            </p>
+                            <label>
+                                <div class="container-input type-color">
+                                    <input type="color"> <span>#000000</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="column">
+                            <p class="letter-subtittle">
+                                FONDO
+                            </p>
+                            <label>
+                                <div class="container-input type-color">
+                                    <input type="color"> <span>#FFFFFF</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <label>
+                        <input type="checkbox" name="fondo-transparente" id="fondo-transparente">
+                        Fondo transparente
+                    </label>
+                    <!-- OUTLINE -->
+                    <div>
+                        <p class="letter-subtittle">
+                            CONTORNO
+                        </p>
+                        <div class="flex-container">
+                            <button class="button-outline">Ninguno</button>
+                            <button class="button-outline">Claro</button>
+                            <button class="button-outline">Oscuro</button>
+                        </div>
+                    </div>
+                    <!-- SPACING -->
+                    <p class="letter-subtittle">
+                        ESPACIADO
+                    </p>
+                    <label>
+                        <input type="number" min="10" max="50" value="35" class="number-spacing">
+                    </label>
+                    <!-- LEADING -->
+                    <p class="letter-subtittle">
+                        INTERLINEADO
+                    </p>
+                    <label>
+                        <select name="interlineado" id="interlineado">
+                            <option value="cero-ocho">0.8</option>
+                            <option value="uno">1</option>
+                            <option value="uno-dos" selected>1.2</option>
+                            <option value="uno-cinco">1.5</option>
+                            <option value="dos">2</option>
+                            <option value="dos-cinco">2.5</option>
+                        </select>
+                    </label>
+                </form>
             </section>
         </aside>
     </div>
@@ -29,17 +227,25 @@
         <header class="flex-container column">
             <h1>Generador de Memes</h1>
             <div class="flex-container container-button">
+                <!-- BUTTON IMAGE -->
                 <div class="button-header">
                     <i class="fa-solid fa-file-image"></i>
                     Imagen
                 </div>
+                <!-- BUTTON TEXT -->
                 <div class="button-header">
                     <i class="fa-solid fa-font"></i>
                     Texto
                 </div>
+                <!-- DARK MODE BUTTON -->
                 <div class="button-header">
                     <i class="fa-regular fa-lightbulb"></i>
                     Modo oscuro
+                </div>
+                <!-- LIGHT MODE BUTTON  -->
+                <div class="button-header hidden">
+                    <i class="fa-regular fa-lightbulb"></i>
+                    Modo claro
                 </div>
             </div>
         </header>
@@ -50,13 +256,14 @@
                     TOP TEXT
                 </p>
                 <figure>
-                    <!-- <img src="" alt="Imagen del meme"> -->
+                    <!-- IMAGE MEME -->
+                    <img src="" alt="">
                 </figure>
                 <p class="flex-container description">
                     BOTTOM TEXT
                 </p>
             </div>
-            <!-- Boton de descarga -->
+            <!-- DOWNLOAD BUTTON -->
             <button class="button-download">
                 <i class="fa-solid fa-download"></i>
                 Descargar meme
