@@ -7,19 +7,28 @@ const buttonModeDark = document.getElementById('button-mode-dark');
 const buttonModeLight = document.getElementById('button-mode-light');
 const topText = document.getElementById('top-text');
 const bottomText = document.getElementById('bottom-text');
+const inputTopText = document.getElementById('textareaTop');
+const inputBottomText = document.getElementById('textareaBottom');
 const buttonDownload = document.getElementById('button-download');
 const asideImage = document.getElementById('aside-image');
 const asideText = document.getElementById('aside-text');
 const url = document.getElementById('url-image');
-const imageMeme = document.getElementById('image-meme')
+const imgMeme = document.getElementById('image-meme');
+const containerTextTop = document.getElementById('container-text-top');
+const containerTextBottom = document.getElementById('container-text-bottom');
+const superiorHidden = document.getElementById('superior-hidden');
+const lowerHidden = document.getElementById('lower-hidden');
+const colorContainerImg = document.getElementById('container-meme-color');
+const colorLetters = document.getElementById('color-letter');
+const backgroundLetters = document.getElementById('color-letter-background');
+const span = document.getElementsByTagName('span');
 
-
-const textHidden = (asideText, asideImage) => {
+const buttonTextHidden = (asideText, asideImage) => {
     asideText.classList.add('hidden');
     asideImage.classList.remove('hidden');
 }
 
-const imageHidden = (asideText, asideImage) => {
+const buttonImageHidden = (asideText, asideImage) => {
     asideImage.classList.add('hidden');
     asideText.classList.remove('hidden');
 }
@@ -46,8 +55,52 @@ const modeDark = (body, header, aside) => {
     buttonModeDark.setAttribute('class', 'button-header button-dark');
 }
 
+const meme = (url, imgMeme) => {
+    imgMeme.style.backgroundImage = `url("${url.value}")`;
+}
 
-buttonText.addEventListener('click', () => imageHidden(asideText, asideImage));
-buttonImage.addEventListener('click', () => textHidden(asideText, asideImage));
+const backgroundColorImg = (e) => {
+    imgMeme.style.backgroundColor = e.target.value;
+}
+
+const nameColorBackgroundImg = (e) => {
+    span[0].innerText = e.target.value.toUpperCase();
+} 
+
+const lettersColor = (e) => {
+    topText.style.color = e.target.value;
+    bottomText.style.color = e.target.value;
+}
+
+const nameColorLetters = (e) => {
+    span[1].innerText = e.target.value.toUpperCase();
+}
+
+const backgroundColorText = (e) => {
+    topText.style.backgroundColor = e.target.value;
+    bottomText.style.backgroundColor = e.target.value;
+}
+
+const nameColorBackgroundText = (e) => {
+    span[2].innerText = e.target.value.toUpperCase();
+}
+
+buttonText.addEventListener('click', () => buttonImageHidden(asideText, asideImage));
+buttonImage.addEventListener('click', () => buttonTextHidden(asideText, asideImage));
 buttonModeDark.addEventListener('click', () => modeLight(body, header, aside));
 buttonModeLight.addEventListener('click', () => modeDark(body, header, aside));
+url.addEventListener("input", () => meme(url, imgMeme));
+colorContainerImg.addEventListener('input', (e) => backgroundColorImg(e));
+colorContainerImg.addEventListener('input', (e) => nameColorBackgroundImg(e));
+colorLetters.addEventListener('input', (e) => lettersColor(e));
+colorLetters.addEventListener('input', (e) => nameColorLetters(e));
+backgroundLetters.addEventListener('input', (e) => backgroundColorText(e));
+backgroundLetters.addEventListener('input', (e) => nameColorBackgroundText(e));
+
+inputTopText.oninput = () => {
+    topText.innerText = `${inputTopText.value}`;
+}
+
+inputBottomText.oninput = () => {
+    bottomText.innerText = `${inputBottomText.value}`;
+}

@@ -18,10 +18,10 @@
                 <h3>IMAGEN</h3>
                 <form>
                     <!-- URL -->
-                    <p class="letter-subtittle" id="url-image">URL</p>
+                    <p class="letter-subtittle">URL</p>
                     <label>
                         <div class="container-input container-input-dark">
-                            <input type="text" id="urlImagen">
+                            <input type="url" id="url-image">
                         </div>
                     </label>
                     <!-- BACKGROUND -->
@@ -32,7 +32,7 @@
                         <div class="flex-container">
                             <label>
                                 <div class="container-input container-input-dark type-color">
-                                    <input type="color"> <span>#FFFFFF</span>
+                                    <input type="color" id="container-meme-color"> <span>#000000</span>
                                 </div>
                             </label>
                             <label class="select-background">
@@ -106,13 +106,11 @@
                     </p>
                     <label>
                         <div class="container-input container-input-dark">
-                            <textarea name="top-text" id="textareaTop" cols="26" rows="1">
-                                TEXTO SUPERIOR
-                            </textarea>
+                            <textarea name="top-text" id="textareaTop" cols="26" rows="1">TEXTO SUPERIOR</textarea>
                         </div>
                     </label>
                     <label>
-                        <input type="checkbox" name="sin-superior" id="sin-superior">
+                        <input type="checkbox" name="sin-superior" id="superior-hidden">
                         Sin texto superior
                     </label>
                     <!-- LOWER -->
@@ -121,13 +119,11 @@
                     </p>
                     <label>
                         <div class="container-input container-input-dark">
-                            <textarea name="bottom-text" id="textareaBottom" cols="26" rows="1">
-                                TEXTO INFERIOR
-                            </textarea>
+                            <textarea name="bottom-text" id="textareaBottom" cols="26" rows="1">TEXTO INFERIOR</textarea>
                         </div>
                     </label>
                     <label>
-                        <input type="checkbox" name="sin-inferior" id="sin-inferior">
+                        <input type="checkbox" name="sin-inferior" id="lower-hidden">
                         Sin texto inferior
                     </label>
                     <!-- FONT -->
@@ -168,7 +164,7 @@
                                 COLOR
                             </p>
                             <label>
-                                <div class="container-input container-input-dark type-color">
+                                <div class="container-input container-input-dark type-color" id="color-letter">
                                     <input type="color"> <span>#000000</span>
                                 </div>
                             </label>
@@ -178,8 +174,8 @@
                                 FONDO
                             </p>
                             <label>
-                                <div class="container-input container-input-dark type-color">
-                                    <input type="color"> <span>#FFFFFF</span>
+                                <div class="container-input container-input-dark type-color" id="color-letter-background">
+                                    <input type="color" value="#FFFFFF"> <span>#FFFFFF</span>
                                 </div>
                             </label>
                         </div>
@@ -255,16 +251,17 @@
         <!-- MAIN -->
         <main class="flex-container column">
             <div class="container-meme">
-                <p class="flex-container description" id="top-text">
-                    TEXTO SUPERIOR
-                </p>
-                <figure>
-                    <!-- IMAGE MEME -->
-                    <img src="" alt="" id="image-meme">
-                </figure>
-                <p class="flex-container description" id="bottom-text">
-                    TEXTO INFERIOR
-                </p>
+                <div class="flex-container container-text" id="container-text-top">
+                    <p id="top-text">TEXTO SUPERIOR</p>
+                </div>
+                <div class="container-meme-img">
+                    <div id="image-meme">
+                        <!-- IMAGE MEME -->
+                    </div>
+                </div>
+                <div class="flex-container container-text" id="container-text-bottom">
+                    <p id="bottom-text">TEXTO INFERIOR</p>
+                </div>
             </div>
             <!-- DOWNLOAD BUTTON -->
             <button class="button-download" id="buttom-download">
