@@ -22,6 +22,25 @@ const colorContainerImg = document.getElementById('container-meme-color');
 const colorLetters = document.getElementById('color-letter');
 const backgroundLetters = document.getElementById('color-letter-background');
 const span = document.getElementsByTagName('span');
+const brightInput = document.getElementById('bright');
+const opacityInput = document.getElementById('opacity');
+const contrastInput = document.getElementById('contrast');
+const blurInput = document.getElementById('blur');
+const graysInput = document.getElementById('gray-scale');
+const sepiaInput = document.getElementById('sepia');
+const hueInput = document.getElementById('hue');
+const saturationInput = document.getElementById('saturation');
+const negativeInput = document.getElementById('negative');
+const buttonReset = document.getElementById('button-reset');
+
+//practica
+
+
+
+
+
+
+//
 
 const buttonTextHidden = (asideText, asideImage) => {
     asideText.classList.add('hidden');
@@ -85,6 +104,14 @@ const nameColorBackgroundText = (e) => {
     span[2].innerText = e.target.value.toUpperCase();
 }
 
+const filters = () => {
+    imgMeme.style.filter = `brightness(${brightInput.value}) opacity(${opacityInput.value}) contrast(${contrastInput.value}%) blur(${blurInput.value}px) grayscale(${graysInput.value}%) sepia(${sepiaInput.value}%) hue-rotate(${hueInput.value}deg) saturate(${saturationInput.value}%) invert(${negativeInput.value})`;
+}
+
+const resetFilters = () => {
+    imgMeme.style.filter = `brightness(1) opacity(1) contrast(100%) blur(0px) grayscale(0%) sepia(1%) hue-rotate(0deg) saturate(100%) invert(0)`;
+}
+
 buttonText.addEventListener('click', () => buttonImageHidden(asideText, asideImage));
 buttonImage.addEventListener('click', () => buttonTextHidden(asideText, asideImage));
 buttonModeDark.addEventListener('click', () => modeLight(body, header, aside));
@@ -96,6 +123,16 @@ colorLetters.addEventListener('input', (e) => lettersColor(e));
 colorLetters.addEventListener('input', (e) => nameColorLetters(e));
 backgroundLetters.addEventListener('input', (e) => backgroundColorText(e));
 backgroundLetters.addEventListener('input', (e) => nameColorBackgroundText(e));
+brightInput.addEventListener('input', () => filters());
+opacityInput.addEventListener('input', () => filters ());
+contrastInput.addEventListener('input', () => filters());
+blurInput.addEventListener('input', () => filters());
+graysInput.addEventListener('input', () => filters());
+sepiaInput.addEventListener('input', () => filters());
+hueInput.addEventListener('input', () => filters());
+saturationInput.addEventListener('input', () => filters());
+negativeInput.addEventListener('input', () => filters());
+buttonReset.addEventListener('click', () => resetFilters());
 
 inputTopText.oninput = () => {
     topText.innerText = `${inputTopText.value}`;

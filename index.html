@@ -54,42 +54,42 @@
                     <div>
                         <label class="column">
                             BRILLO
-                        <input type="range">
+                        <input type="range" id="bright" min="0" max="1" value="1" step="0.1">
                         </label>
                         <label class="column">
                             OPACIDAD
-                            <input type="range">
+                            <input type="range" id="opacity" min="0" max="1" value="1" step="0.1">
                         </label>
                         <label class="column">
                             CONTRASTE
-                            <input type="range">
+                            <input type="range" id="contrast" min="100" max="1000" value="100" step="1">
                         </label>
                         <label class="column">
                             DESENFOQUE
-                            <input type="range">
+                            <input type="range" id="blur" min="0" max="10" value="0" step="0.1">
                         </label>
                         <label class="column">
                             ESCALA DE GRISES
-                            <input type="range">
+                            <input type="range" id="gray-scale" min="0" max="100" value="0" step="1">
                         </label>
                         <label class="column">
                             SEPIA
-                            <input type="range">
+                            <input type="range" id="sepia" min="0" max="100" value="0" step="1">
                         </label>
                         <label class="column">
                             HUE
-                        <input type="range">
+                        <input type="range" id="hue" min="0" max="359" value="0" step="1">
                         </label>
                         <label class="column">
                             SATURADO
-                            <input type="range">
+                            <input type="range" id="saturation" min="100" max="1000" value="100" step="10">
                         </label>
                         <label class="column">
                             NEGATIVO
-                            <input type="range">
+                            <input type="range" id="negative" min="0" max="1" value="0" step="0.1">
                         </label>
                         <!-- BUTTON RESET -->
-                        <button type="reset" class="button-reset">
+                        <button type="reset" id="button-reset" class="button-reset">
                             Reestablecer filtros
                         </button>
                     </div>
