@@ -9,6 +9,11 @@
     <script src="https://kit.fontawesome.com/d0ec7b50c3.js" crossorigin="anonymous"></script>
     <!-- FontGoogle -->
     <link href="https: //fonts.googleapis.com/css2? familia= Oxígeno:peso@400;700 & display=swap" rel="stylesheet"></link>
+    <!-- Download Image -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    ></script>
 </head>
 <body class="body-dark">
     <div class="reverse">
@@ -110,7 +115,7 @@
                         </div>
                     </label>
                     <label>
-                        <input type="checkbox" name="sin-superior" id="superior-hidden">
+                        <input type="checkbox" name="sin-superior" id="top-text-checkbox">
                         Sin texto superior
                     </label>
                     <!-- LOWER -->
@@ -123,7 +128,7 @@
                         </div>
                     </label>
                     <label>
-                        <input type="checkbox" name="sin-inferior" id="lower-hidden">
+                        <input type="checkbox" name="sin-inferior" id="bottom-text-checkbox">
                         Sin texto inferior
                     </label>
                     <!-- FONT -->
@@ -145,7 +150,7 @@
                     </label>
                     <div class="flex-container">
                         <label>
-                            <input type="number" value="40" min="12" class="number-font">
+                            <input type="number" value="40" min="12" class="number-font" id="font-size-input">
                         </label>
                         <div class="container-justify">
                             <i class="fa-solid fa-outdent"></i>
@@ -239,22 +244,22 @@
                 <!-- DARK MODE BUTTON -->
                 <button class="button-header button-dark" id="button-mode-dark">
                     <i class="fa-regular fa-lightbulb"></i>
-                    Modo oscuro
+                    Modo claro
                 </button>
                 <!-- LIGHT MODE BUTTON  -->
                 <button class="button-header button-light hidden" id="button-mode-light">
-                    <i class="fa-regular fa-lightbulb"></i>
-                    Modo claro
+                    <i class="fa-solid fa-lightbulb"></i>
+                    Modo oscuro
                 </button>
             </div>
         </header>
         <!-- MAIN -->
-        <main class="flex-container column">
-            <div class="container-meme">
+        <main class="flex-container column main-dark">
+            <div class="container-meme" id="container-meme">
                 <div class="flex-container container-text" id="container-text-top">
                     <p id="top-text">TEXTO SUPERIOR</p>
                 </div>
-                <div class="container-meme-img">
+                <div class="container-meme-img" id="container-meme-img">
                     <div id="image-meme">
                         <!-- IMAGE MEME -->
                     </div>
@@ -264,7 +269,7 @@
                 </div>
             </div>
             <!-- DOWNLOAD BUTTON -->
-            <button class="button-download" id="buttom-download">
+            <button class="button-download" id="button-download">
                 <i class="fa-solid fa-download"></i>
                 Descargar meme
             </button>

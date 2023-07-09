@@ -104,6 +104,14 @@ header {
 }
 
 /* MAIN */
+.main-dark {
+    background-color: #30343F;
+}
+
+.main-light {
+    background-color: #eeeeee;
+}
+
 .container-meme {
     background-color: black;
     width: 44%;
@@ -192,19 +200,17 @@ input[type='color'] {
     width: 25px;
     height: 25px; 
     border-radius: 50%;
+    background-color: transparent;
 }
 
-input[type=color]::-webkit-color-swatch {
+input[type=color]::-webkit-color-swatch, input[type=color]::-webkit-color-swatch-wrapper{
     border: none;
-    border-radius: 50%;
-}
-
-input[type=color]::-webkit-color-swatch-wrapper {
+    border-radius: 100%;
     padding: 0;
 }
 
 .type-color {
-    padding: 0px 10px;
+    padding: 1px 15px 1px 5px;
 }
 
 span {

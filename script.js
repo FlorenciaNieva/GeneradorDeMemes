@@ -1,4 +1,5 @@
-const body = document.getElementsByTagName('body');
+const body = document.getElementsByTagName('body')
+const main = document.getElementsByTagName('main');
 const header = document.getElementsByTagName('header');
 const aside = document.getElementsByTagName('aside');
 const buttonImage = document.getElementById('button-image');
@@ -14,13 +15,10 @@ const asideImage = document.getElementById('aside-image');
 const asideText = document.getElementById('aside-text');
 const url = document.getElementById('url-image');
 const imgMeme = document.getElementById('image-meme');
-const containerTextTop = document.getElementById('container-text-top');
-const containerTextBottom = document.getElementById('container-text-bottom');
-const superiorHidden = document.getElementById('superior-hidden');
-const lowerHidden = document.getElementById('lower-hidden');
 const colorContainerImg = document.getElementById('container-meme-color');
 const colorLetters = document.getElementById('color-letter');
 const backgroundLetters = document.getElementById('color-letter-background');
+const fontSizeInput = document.getElementById('font-size-input');
 const span = document.getElementsByTagName('span');
 const brightInput = document.getElementById('bright');
 const opacityInput = document.getElementById('opacity');
@@ -32,15 +30,12 @@ const hueInput = document.getElementById('hue');
 const saturationInput = document.getElementById('saturation');
 const negativeInput = document.getElementById('negative');
 const buttonReset = document.getElementById('button-reset');
-
-//practica
-
-
-
-
-
-
-//
+const containerTextTop = document.getElementById('container-text-top');
+const containerTextBottom = document.getElementById('container-text-bottom');
+const topTextCheckbox = document.getElementById('top-text-checkbox');
+const bottomTextCheckbox = document.getElementById('bottom-text-checkbox');
+const containerMemeImg = document.getElementById('container-meme-img');
+const containerMeme = document.getElementById('container-meme');
 
 const buttonTextHidden = (asideText, asideImage) => {
     asideText.classList.add('hidden');
@@ -52,29 +47,29 @@ const buttonImageHidden = (asideText, asideImage) => {
     asideText.classList.remove('hidden');
 }
 
-const modeLight = (body, header, aside) => {
+const modeLight = (main, header, aside) => {
     body[0].classList.add('body-light');
+    main[0].classList.add('main-light');
     header[0].classList.add('header-light');
     aside[0].classList.add('aside-light');
     buttonText.classList.add('button-light');
     buttonImage.classList.add('button-light');
-    buttonModeDark.setAttribute('class', 'hidden');
+    buttonModeDark.classList.add('hidden');
     buttonModeLight.classList.remove('hidden');
-    buttonModeLight.setAttribute('class', 'button-header button-light');
 }
 
-const modeDark = (body, header, aside) => {
+const modeDark = (main, header, aside) => {
     body[0].classList.remove('body-light');
+    main[0].classList.remove('main-light');
     header[0].classList.remove('header-light');
     aside[0].classList.remove('aside-light');
     buttonText.classList.remove('button-light');
     buttonImage.classList.remove('button-light');
-    buttonModeLight.setAttribute('class', 'hidden');
+    buttonModeLight.classList.add('hidden');
     buttonModeDark.classList.remove('hidden');
-    buttonModeDark.setAttribute('class', 'button-header button-dark');
 }
 
-const meme = (url, imgMeme) => {
+const imageMeme = (url, imgMeme) => {
     imgMeme.style.backgroundImage = `url("${url.value}")`;
 }
 
@@ -96,8 +91,8 @@ const nameColorLetters = (e) => {
 }
 
 const backgroundColorText = (e) => {
-    topText.style.backgroundColor = e.target.value;
-    bottomText.style.backgroundColor = e.target.value;
+    containerTextTop.style.backgroundColor = e.target.value;
+    containerTextBottom.style.backgroundColor = e.target.value;
 }
 
 const nameColorBackgroundText = (e) => {
@@ -112,11 +107,44 @@ const resetFilters = () => {
     imgMeme.style.filter = `brightness(1) opacity(1) contrast(100%) blur(0px) grayscale(0%) sepia(1%) hue-rotate(0deg) saturate(100%) invert(0)`;
 }
 
+const fontSize = () => {
+    topText.style.fontSize = `${fontSizeInput.value}px`;
+    bottomText.style.fontSize = `${fontSizeInput.value}px`;
+}
+
+const hiddenText = () => {
+    if (topTextCheckbox.checked && bottomTextCheckbox.checked) {
+        containerMemeImg.style.height = '605px';
+        containerTextTop.classList.add('hidden');
+        containerTextBottom.classList.add('hidden');
+    } else {
+        if (topTextCheckbox.checked) {
+            containerTextTop.classList.add('hidden');
+            containerTextBottom.classList.remove('hidden');
+            containerMemeImg.style.height = '490px';
+        } else if (bottomTextCheckbox.checked) {
+            containerTextBottom.classList.add('hidden');
+            containerTextTop.classList.remove('hidden');
+            containerMemeImg.style.height = '490px';
+        } else {
+            containerTextBottom.classList.remove('hidden');
+            containerTextTop.classList.remove('hidden');
+            containerMemeImg.style.height = '375px';
+        }
+    }
+}
+
+const downloadMeme = () => {
+    domtoimage.toBlob(containerMeme).then(function (blob) {
+    window.saveAs(blob, "mi-meme.png");
+    });
+};
+
 buttonText.addEventListener('click', () => buttonImageHidden(asideText, asideImage));
 buttonImage.addEventListener('click', () => buttonTextHidden(asideText, asideImage));
-buttonModeDark.addEventListener('click', () => modeLight(body, header, aside));
-buttonModeLight.addEventListener('click', () => modeDark(body, header, aside));
-url.addEventListener("input", () => meme(url, imgMeme));
+buttonModeDark.addEventListener('click', () => modeLight(main, header, aside));
+buttonModeLight.addEventListener('click', () => modeDark(main, header, aside));
+url.addEventListener("input", () => imageMeme(url, imgMeme));
 colorContainerImg.addEventListener('input', (e) => backgroundColorImg(e));
 colorContainerImg.addEventListener('input', (e) => nameColorBackgroundImg(e));
 colorLetters.addEventListener('input', (e) => lettersColor(e));
@@ -133,6 +161,10 @@ hueInput.addEventListener('input', () => filters());
 saturationInput.addEventListener('input', () => filters());
 negativeInput.addEventListener('input', () => filters());
 buttonReset.addEventListener('click', () => resetFilters());
+fontSizeInput.addEventListener('input', () => fontSize());
+topTextCheckbox.addEventListener('change', () => hiddenText());
+bottomTextCheckbox.addEventListener('change', () => hiddenText());
+buttonDownload.addEventListener("click", () => downloadMeme());
 
 inputTopText.oninput = () => {
     topText.innerText = `${inputTopText.value}`;
