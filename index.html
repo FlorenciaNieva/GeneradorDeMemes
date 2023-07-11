@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/d0ec7b50c3.js" crossorigin="anonymous"></script>
-    <!-- FontGoogle -->
-    <link href="https: //fonts.googleapis.com/css2? familia= Oxígeno:peso@400;700 & display=swap" rel="stylesheet"></link>
     <!-- Download Image -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
     ></script>
@@ -26,7 +24,7 @@
                     <p class="letter-subtittle">URL</p>
                     <label>
                         <div class="container-input container-input-dark">
-                            <input type="url" id="url-image">
+                            <input type="url" id="url-image" autocomplete="off">
                         </div>
                     </label>
                     <!-- BACKGROUND -->
@@ -186,7 +184,7 @@
                         </div>
                     </div>
                     <label>
-                        <input type="checkbox" name="fondo-transparente" id="fondo-transparente">
+                        <input type="checkbox" name="background-checkbox" id="background-checkbox">
                         Fondo transparente
                     </label>
                     <!-- OUTLINE -->
@@ -255,6 +253,7 @@
         </header>
         <!-- MAIN -->
         <main class="flex-container column main-dark">
+
             <div class="container-meme" id="container-meme">
                 <div class="flex-container container-text" id="container-text-top">
                     <p id="top-text">TEXTO SUPERIOR</p>
@@ -268,6 +267,7 @@
                     <p id="bottom-text">TEXTO INFERIOR</p>
                 </div>
             </div>
+
             <!-- DOWNLOAD BUTTON -->
             <button class="button-download" id="button-download">
                 <i class="fa-solid fa-download"></i>

@@ -1,7 +1,7 @@
 * {
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Oxygen', sans-serif;
+    font-family: sans-serif;
 }
 
 .body-dark {
@@ -103,6 +103,9 @@ header {
     color: #424242;
 }
 
+/*  */
+/*  */
+
 /* MAIN */
 .main-dark {
     background-color: #30343F;
@@ -116,6 +119,7 @@ header {
     background-color: black;
     width: 44%;
     justify-content: space-between;
+    position: relative;
 }
 
 .container-text {
@@ -171,7 +175,7 @@ input {
 }
 
 input[type="text"], input[type="url"] {
-    background-color: rgba(128, 128, 128, 0);
+    background-color: transparent;
     color: white;
     padding: 5px;
     border-radius: 5px;
@@ -282,7 +286,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 textarea {
-    background-color: rgba(128, 128, 128, 0);
+    background-color: transparent;
     color: white;
     padding: 10px;
     border: none;

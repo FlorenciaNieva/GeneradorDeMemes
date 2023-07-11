@@ -36,6 +36,7 @@ const topTextCheckbox = document.getElementById('top-text-checkbox');
 const bottomTextCheckbox = document.getElementById('bottom-text-checkbox');
 const containerMemeImg = document.getElementById('container-meme-img');
 const containerMeme = document.getElementById('container-meme');
+const backgroundCheckbox = document.getElementById('background-checkbox');
 
 const buttonTextHidden = (asideText, asideImage) => {
     asideText.classList.add('hidden');
@@ -173,3 +174,25 @@ inputTopText.oninput = () => {
 inputBottomText.oninput = () => {
     bottomText.innerText = `${inputBottomText.value}`;
 }
+
+///////////////////////////////////////////////////////
+const transparentCheckbox = () => {
+    if (backgroundCheckbox.checked) {
+        containerMemeImg.style.height = '605px';
+        containerTextTop.style.position = 'absolute';
+        containerTextBottom.style.position = 'absolute';
+        containerTextTop.style.width = '100%';
+        containerTextBottom.style.width = '100%';
+        containerTextBottom.style.bottom = '0px';
+        containerTextTop.style.backgroundColor = 'transparent';
+        containerTextBottom.style.backgroundColor = 'transparent';
+    } else {
+        containerMemeImg.style.height = '375px';
+        containerTextTop.style.position = 'static';
+        containerTextBottom.style.position = 'static';
+        containerTextTop.style.backgroundColor = backgroundLetters.value;
+        containerTextBottom.style.backgroundColor = backgroundLetters.value;
+    }
+}
+backgroundCheckbox.addEventListener('change', () => transparentCheckbox());
+backgroundLetters.addEventListener('input', () => transparentCheckbox());
