@@ -123,17 +123,20 @@ header {
 }
 
 .container-text {
-    height: 115px;
+    padding: 35px 50px 35px 50px;
     background-color: white;
-    font-size: 2rem;
+    font-size: 40px;
     font-weight: 900;
 }
+
 #top-text {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-#bottoom-text {
+
+#bottom-text {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
 .container-meme-img {
     height: 375px;
 }
@@ -310,14 +313,17 @@ textarea {
     background-color: #969696c0;
 }
 
-.container-justify {
+.button-justify {
+    outline: none;
     background-color: #3b3f486f;
+    color: white;
     margin: 3px;
-    padding: 8px;
+    padding: 10px 9px;
     border-radius: 5px;
+    border: none;
 }
 
-.container-justify:hover, .container-justify:focus {
+.button-justify:hover, .button-justify:focus {
     background-color: #969696c0;
 }
 

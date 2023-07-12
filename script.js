@@ -38,6 +38,23 @@ const containerMemeImg = document.getElementById('container-meme-img');
 const containerMeme = document.getElementById('container-meme');
 const backgroundCheckbox = document.getElementById('background-checkbox');
 const fontSelector = document.getElementById('font-selector');
+const mixColor = document.getElementById('mix-color');
+const buttonStart = document.getElementById('button-star');
+const buttonCenter = document.getElementById('button-center');
+const buttonEnd = document.getElementById('button-end');
+const buttonNone = document.getElementById('button-none');
+const buttonLight = document.getElementById('button-light');
+const buttonDark = document.getElementById('button-dark');
+const spacingInput = document.getElementById('spacing-input');
+const lineSelect = document.getElementById('line-select');
+
+inputTopText.oninput = () => {
+    topText.innerText = `${inputTopText.value}`;
+}
+
+inputBottomText.oninput = () => {
+    bottomText.innerText = `${inputBottomText.value}`;
+}
 
 const buttonTextHidden = (asideText, asideImage) => {
     asideText.classList.add('hidden');
@@ -75,30 +92,21 @@ const imageMeme = (url, imgMeme) => {
     imgMeme.style.backgroundImage = `url("${url.value}")`;
 }
 
-const backgroundColorImg = (e) => {
-    imgMeme.style.backgroundColor = e.target.value;
+const backgroundColorImg = () => {
+    imgMeme.style.backgroundColor = colorContainerImg.value;
+    span[0].innerText = colorContainerImg.value.toUpperCase();
 }
-
-const nameColorBackgroundImg = (e) => {
-    span[0].innerText = e.target.value.toUpperCase();
-} 
 
 const lettersColor = (e) => {
     topText.style.color = e.target.value;
     bottomText.style.color = e.target.value;
-}
-
-const nameColorLetters = (e) => {
     span[1].innerText = e.target.value.toUpperCase();
 }
 
-const backgroundColorText = (e) => {
-    containerTextTop.style.backgroundColor = e.target.value;
-    containerTextBottom.style.backgroundColor = e.target.value;
-}
-
-const nameColorBackgroundText = (e) => {
-    span[2].innerText = e.target.value.toUpperCase();
+const backgroundColorText = () => {
+    containerTextTop.style.backgroundColor = backgroundLetters.value;
+    containerTextBottom.style.backgroundColor = backgroundLetters.value;
+    span[2].innerText = backgroundLetters.value.toUpperCase();
 }
 
 const filters = () => {
@@ -116,22 +124,18 @@ const fontSize = () => {
 
 const hiddenText = () => {
     if (topTextCheckbox.checked && bottomTextCheckbox.checked) {
-        containerMemeImg.style.height = '605px';
         containerTextTop.classList.add('hidden');
         containerTextBottom.classList.add('hidden');
     } else {
         if (topTextCheckbox.checked) {
             containerTextTop.classList.add('hidden');
             containerTextBottom.classList.remove('hidden');
-            containerMemeImg.style.height = '490px';
         } else if (bottomTextCheckbox.checked) {
             containerTextBottom.classList.add('hidden');
             containerTextTop.classList.remove('hidden');
-            containerMemeImg.style.height = '490px';
         } else {
             containerTextBottom.classList.remove('hidden');
             containerTextTop.classList.remove('hidden');
-            containerMemeImg.style.height = '375px';
         }
     }
 }
@@ -142,7 +146,7 @@ const downloadMeme = () => {
     });
 };
 
-const transparentCheckbox = () => {
+const checkboxTexts = () => {
     if (backgroundCheckbox.checked) {
         containerMemeImg.style.height = '605px';
         containerTextTop.style.position = 'absolute';
@@ -169,6 +173,17 @@ const transparentCheckbox = () => {
         containerTextBottom.style.position = 'static';
         containerTextTop.style.backgroundColor = backgroundLetters.value;
         containerTextBottom.style.backgroundColor = backgroundLetters.value;
+        if (topTextCheckbox.checked && bottomTextCheckbox.checked) {
+            containerMemeImg.style.height = '605px';
+        } else {
+            if (topTextCheckbox.checked) {
+                containerMemeImg.style.height = '490px';
+            } else if (bottomTextCheckbox.checked) {
+                containerMemeImg.style.height = '490px';
+            } else {
+                containerMemeImg.style.height = '375px';
+            }
+        }
     }
 }
 
@@ -177,17 +192,60 @@ topText.style.fontFamily = fontSelector.value;
 bottomText.style.fontFamily = fontSelector.value;
 }
 
+const mixingColors = () => {
+    imgMeme.style.backgroundBlendMode = mixColor.value;
+}
+
+const justifyStart = () => {
+    containerTextTop.style.justifyContent = 'start';
+    containerTextBottom.style.justifyContent = 'start';
+}
+
+const justifyCenter = () => {
+    containerTextTop.style.justifyContent = 'center';
+    containerTextBottom.style.justifyContent = 'center';
+}
+
+const justifyEnd = () => {
+    containerTextTop.style.justifyContent = 'end';
+    containerTextBottom.style.justifyContent = 'end';
+}
+
+const shadowNone = () => {
+    topText.style.textShadow = 'none';
+    bottomText.style.textShadow = 'none';
+}
+
+const shadowLight = () => {
+    topText.style.textShadow = '0 0 0.2em #FFF, 0 0 0.2em #FFF';
+    bottomText.style.textShadow = '0 0 0.2em #FFF, 0 0 0.2em #FFF';
+}
+
+const shadowDark = () => {
+    topText.style.textShadow = '0 0 0.2em #000, 0 0 0.2em #000';
+    bottomText.style.textShadow = '0 0 0.2em #000, 0 0 0.2em #000';
+}
+
+const padding = () => {
+    containerTextBottom.style.paddingTop = `${spacingInput.value}px`;
+    containerTextTop.style.paddingTop = `${spacingInput.value}px`;
+    containerTextBottom.style.paddingBottom = `${spacingInput.value}px`;
+    containerTextTop.style.paddingBottom = `${spacingInput.value}px`;
+}
+
+const lineHight = () => {
+    topText.style.lineHeight = lineSelect.value;
+    bottomText.style.lineHeight = lineSelect.value;
+}
+
 buttonText.addEventListener('click', () => buttonImageHidden(asideText, asideImage));
 buttonImage.addEventListener('click', () => buttonTextHidden(asideText, asideImage));
 buttonModeDark.addEventListener('click', () => modeLight(main, header, aside));
 buttonModeLight.addEventListener('click', () => modeDark(main, header, aside));
 url.addEventListener("input", () => imageMeme(url, imgMeme));
-colorContainerImg.addEventListener('input', (e) => backgroundColorImg(e));
-colorContainerImg.addEventListener('input', (e) => nameColorBackgroundImg(e));
+colorContainerImg.addEventListener('input', () => backgroundColorImg());
 colorLetters.addEventListener('input', (e) => lettersColor(e));
-colorLetters.addEventListener('input', (e) => nameColorLetters(e));
-backgroundLetters.addEventListener('input', (e) => backgroundColorText(e));
-backgroundLetters.addEventListener('input', (e) => nameColorBackgroundText(e));
+backgroundLetters.addEventListener('input', () => backgroundColorText());
 brightInput.addEventListener('input', () => filters());
 opacityInput.addEventListener('input', () => filters ());
 contrastInput.addEventListener('input', () => filters());
@@ -202,16 +260,17 @@ fontSizeInput.addEventListener('input', () => fontSize());
 topTextCheckbox.addEventListener('change', () => hiddenText());
 bottomTextCheckbox.addEventListener('change', () => hiddenText());
 buttonDownload.addEventListener("click", () => downloadMeme());
-backgroundCheckbox.addEventListener('change', () => transparentCheckbox());
-backgroundLetters.addEventListener('input', () => transparentCheckbox());
-topTextCheckbox.addEventListener('change', () => transparentCheckbox());
-bottomTextCheckbox.addEventListener('change', () => transparentCheckbox());
+backgroundCheckbox.addEventListener('change', () => checkboxTexts());
+backgroundLetters.addEventListener('input', () => checkboxTexts());
+topTextCheckbox.addEventListener('change', () => checkboxTexts());
+bottomTextCheckbox.addEventListener('change', () => checkboxTexts());
 fontSelector.addEventListener('change', () => changeFont());
-
-inputTopText.oninput = () => {
-    topText.innerText = `${inputTopText.value}`;
-}
-
-inputBottomText.oninput = () => {
-    bottomText.innerText = `${inputBottomText.value}`;
-}
+mixColor.addEventListener('change', () => mixingColors());
+buttonStart.addEventListener('click', () => justifyStart());
+buttonCenter.addEventListener('click', () => justifyCenter());
+buttonEnd.addEventListener('click', () => justifyEnd());
+buttonNone.addEventListener('click', () => shadowNone());
+buttonLight.addEventListener('click', () => shadowLight());
+buttonDark.addEventListener('click', () => shadowDark());
+spacingInput.addEventListener('input', () => padding());
+lineSelect.addEventListener('change', () => lineHight());

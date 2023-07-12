@@ -39,13 +39,13 @@
                                 </div>
                             </label>
                             <label class="select-background">
-                                <select name="mix-color" id="mixColor">
-                                    <option value="ninguno" selected>Ninguno</option>
-                                    <option value="aclarar">Aclarar</option>
-                                    <option value="oscurecer">Oscurecer</option>
-                                    <option value="diferencia">Diferencia</option>
-                                    <option value="luminosidad">Luminosidad</option>
-                                    <option value="multiplicar">Multiplicar</option>
+                                <select name="mix-color" id="mix-color">
+                                    <option value="unset" selected>Ninguno</option>
+                                    <option value="lighten">Aclarar</option>
+                                    <option value="darken">Oscurecer</option>
+                                    <option value="difference">Diferencia</option>
+                                    <option value="luminosity">Luminosidad</option>
+                                    <option value="multiply">Multiplicar</option>
                                 </select>
                             </label>
                         </div>
@@ -140,7 +140,7 @@
                             <option value="American Typewriter">American Typewriter</option>
                             <option value="Andale Mono">Andale Mono</option>
                             <option value="Comic Sans MS">Comic Sans MS</option>
-                            <option value="Helvetica, sans-serif">Helvetica</option>
+                            <option value="Helvetica">Helvetica</option>
                             <option value="Impact" selected>Impact</option>
                             <option value="Verdana">Verdana</option>
                             <option value="Times New Roman">Times New Roman</option>
@@ -150,15 +150,15 @@
                         <label>
                             <input type="number" value="40" min="12" class="number-font" id="font-size-input">
                         </label>
-                        <div class="container-justify">
+                        <button type="button" class="button-justify" id="button-star">
                             <i class="fa-solid fa-outdent"></i>
-                        </div>
-                        <div class="container-justify">
+                        </button>
+                        <button type="button" class="button-justify" id="button-center">
                             <i class="fa-solid fa-align-justify"></i>
-                        </div>
-                        <div class="container-justify">
+                        </button>
+                        <button type="button" class="button-justify" id="button-end">
                             <i class="fa-solid fa-indent"></i>
-                        </div>
+                        </button>
                     </div>
                     <!-- COLOR -->
                     <div class="flex-container space">
@@ -187,15 +187,15 @@
                         <input type="checkbox" name="background-checkbox" id="background-checkbox">
                         Fondo transparente
                     </label>
-                    <!-- OUTLINE -->
+                    <!-- OUTLINE TEXT -->
                     <div>
                         <p class="letter-subtittle">
                             CONTORNO
                         </p>
                         <div class="flex-container">
-                            <button class="button-outline">Ninguno</button>
-                            <button class="button-outline">Claro</button>
-                            <button class="button-outline">Oscuro</button>
+                            <button type="button" class="button-outline" id="button-none">Ninguno</button>
+                            <button type="button" class="button-outline" id="button-light">Claro</button>
+                            <button type="button" class="button-outline" id="button-dark">Oscuro</button>
                         </div>
                     </div>
                     <!-- SPACING -->
@@ -203,20 +203,20 @@
                         ESPACIADO
                     </p>
                     <label>
-                        <input type="number" min="10" max="50" value="35" class="number-spacing">
+                        <input type="number" min="10" max="50" value="35" class="number-spacing" id="spacing-input">
                     </label>
                     <!-- LEADING -->
                     <p class="letter-subtittle">
                         INTERLINEADO
                     </p>
                     <label>
-                        <select name="interlineado" id="interlineado">
-                            <option value="cero-ocho">0.8</option>
-                            <option value="uno">1</option>
-                            <option value="uno-dos" selected>1.2</option>
-                            <option value="uno-cinco">1.5</option>
-                            <option value="dos">2</option>
-                            <option value="dos-cinco">2.5</option>
+                        <select name="line-select" id="line-select">
+                            <option value="0.8">0.8</option>
+                            <option value="1">1</option>
+                            <option value="1.2" selected>1.2</option>
+                            <option value="1.5">1.5</option>
+                            <option value="2">2</option>
+                            <option value="2.5">2.5</option>
                         </select>
                     </label>
                 </form>
