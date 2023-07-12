@@ -1,4 +1,4 @@
-const body = document.getElementsByTagName('body')
+const body = document.getElementsByTagName('body');
 const main = document.getElementsByTagName('main');
 const header = document.getElementsByTagName('header');
 const aside = document.getElementsByTagName('aside');
@@ -37,6 +37,7 @@ const bottomTextCheckbox = document.getElementById('bottom-text-checkbox');
 const containerMemeImg = document.getElementById('container-meme-img');
 const containerMeme = document.getElementById('container-meme');
 const backgroundCheckbox = document.getElementById('background-checkbox');
+const fontSelector = document.getElementById('font-selector');
 
 const buttonTextHidden = (asideText, asideImage) => {
     asideText.classList.add('hidden');
@@ -141,6 +142,41 @@ const downloadMeme = () => {
     });
 };
 
+const transparentCheckbox = () => {
+    if (backgroundCheckbox.checked) {
+        containerMemeImg.style.height = '605px';
+        containerTextTop.style.position = 'absolute';
+        containerTextBottom.style.position = 'absolute';
+        containerTextTop.style.width = '100%';
+        containerTextBottom.style.width = '100%';
+        containerTextBottom.style.bottom = '0px';
+        containerTextTop.style.backgroundColor = 'transparent';
+        containerTextBottom.style.backgroundColor = 'transparent';
+        if (topTextCheckbox.checked && bottomTextCheckbox.checked) {
+            containerMemeImg.style.height = '605px';
+        } else {
+            if (topTextCheckbox.checked) {
+                containerMemeImg.style.height = '605px';
+            } else if (bottomTextCheckbox.checked) {
+                containerMemeImg.style.height = '605px';
+            } else {
+                containerMemeImg.style.height = '605px';
+            }
+        }
+    } else {
+        containerMemeImg.style.height = '375px';
+        containerTextTop.style.position = 'static';
+        containerTextBottom.style.position = 'static';
+        containerTextTop.style.backgroundColor = backgroundLetters.value;
+        containerTextBottom.style.backgroundColor = backgroundLetters.value;
+    }
+}
+
+const changeFont = () => {
+topText.style.fontFamily = fontSelector.value;
+bottomText.style.fontFamily = fontSelector.value;
+}
+
 buttonText.addEventListener('click', () => buttonImageHidden(asideText, asideImage));
 buttonImage.addEventListener('click', () => buttonTextHidden(asideText, asideImage));
 buttonModeDark.addEventListener('click', () => modeLight(main, header, aside));
@@ -166,6 +202,11 @@ fontSizeInput.addEventListener('input', () => fontSize());
 topTextCheckbox.addEventListener('change', () => hiddenText());
 bottomTextCheckbox.addEventListener('change', () => hiddenText());
 buttonDownload.addEventListener("click", () => downloadMeme());
+backgroundCheckbox.addEventListener('change', () => transparentCheckbox());
+backgroundLetters.addEventListener('input', () => transparentCheckbox());
+topTextCheckbox.addEventListener('change', () => transparentCheckbox());
+bottomTextCheckbox.addEventListener('change', () => transparentCheckbox());
+fontSelector.addEventListener('change', () => changeFont());
 
 inputTopText.oninput = () => {
     topText.innerText = `${inputTopText.value}`;
@@ -174,25 +215,3 @@ inputTopText.oninput = () => {
 inputBottomText.oninput = () => {
     bottomText.innerText = `${inputBottomText.value}`;
 }
-
-///////////////////////////////////////////////////////
-const transparentCheckbox = () => {
-    if (backgroundCheckbox.checked) {
-        containerMemeImg.style.height = '605px';
-        containerTextTop.style.position = 'absolute';
-        containerTextBottom.style.position = 'absolute';
-        containerTextTop.style.width = '100%';
-        containerTextBottom.style.width = '100%';
-        containerTextBottom.style.bottom = '0px';
-        containerTextTop.style.backgroundColor = 'transparent';
-        containerTextBottom.style.backgroundColor = 'transparent';
-    } else {
-        containerMemeImg.style.height = '375px';
-        containerTextTop.style.position = 'static';
-        containerTextBottom.style.position = 'static';
-        containerTextTop.style.backgroundColor = backgroundLetters.value;
-        containerTextBottom.style.backgroundColor = backgroundLetters.value;
-    }
-}
-backgroundCheckbox.addEventListener('change', () => transparentCheckbox());
-backgroundLetters.addEventListener('input', () => transparentCheckbox());

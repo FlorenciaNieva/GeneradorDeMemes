@@ -128,7 +128,12 @@ header {
     font-size: 2rem;
     font-weight: 900;
 }
-
+#top-text {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#bottoom-text {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 .container-meme-img {
     height: 375px;
 }
