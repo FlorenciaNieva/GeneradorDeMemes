@@ -12,33 +12,43 @@
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous" referrerpolicy="no-referrer"
     ></script>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
 </head>
 <body class="body-dark">
+    <!-- ### ASIDE ### -->
     <div class="reverse">
-            <aside class="flex-container column aside-dark">
-            <!-- ASIDE IMAGE -->
-            <section class="" id="aside-image">
+        <aside class="flex-container column aside-dark aside-hidden">
+            <!-- /// SECTION IMAGE /// -->
+            <section id="aside-image">
+                <!-- BUTTON X -->
+                <button type="button" class="button-x" id="image-button-x">
+                    <i class="fa-regular fa-circle-xmark"></i>
+                </button>
                 <h3>IMAGEN</h3>
                 <form>
-                    <!-- URL -->
-                    <p class="letter-subtittle">URL</p>
+                    <p class="letter-subtittle">
+                        URL
+                    </p>
                     <label>
                         <div class="container-input container-input-dark">
+                            <!-- INPUT URL -->
                             <input type="url" id="url-image" autocomplete="off">
                         </div>
                     </label>
-                    <!-- BACKGROUND -->
                     <div class="flex-container column">
-                        <p class="letter-subtittle ">
+                        <p class="letter-subtittle">
                             FONDO
                         </p>
                         <div class="flex-container">
                             <label>
                                 <div class="container-input container-input-dark type-color">
+                                    <!-- INPUT CONTAINER BACKGROUND-COLOR -->
                                     <input type="color" id="container-meme-color"> <span>#000000</span>
                                 </div>
                             </label>
                             <label class="select-background">
+                                <!-- SECTION MIX-COLOR -->
                                 <select name="mix-color" id="mix-color">
                                     <option value="unset" selected>Ninguno</option>
                                     <option value="lighten">Aclarar</option>
@@ -50,11 +60,11 @@
                             </label>
                         </div>
                     </div>
-                    <!-- FILTER -->
                     <p class="letter-subtittle filter">
                         FILTROS
                     </p>
                     <div>
+                        <!-- INPUTS FILTERS -->
                         <label class="column">
                             BRILLO
                         <input type="range" id="bright" min="0" max="1" value="1" step="0.1">
@@ -96,45 +106,50 @@
                             Reestablecer filtros
                         </button>
                     </div>
-                    
                 </form>
             </section>
-            <!-- ASIDE TEXT -->
+            <!-- /// SECTION TEXT /// -->
             <section class="hidden" id="aside-text">
+                <!-- BUTTON X -->
+                <button type="button" class="button-x" id="text-button-x">
+                    <i class="fa-regular fa-circle-xmark"></i>
+                </button>
                 <h3>TEXTO</h3>
                 <form>
-                    <!-- SUPERIOR -->
                     <p class="letter-subtittle">
                         SUPERIOR
                     </p>
                     <label>
                         <div class="container-input container-input-dark">
-                            <textarea name="top-text" id="textareaTop" cols="26" rows="1">TEXTO SUPERIOR</textarea>
+                            <!-- TEXTAREA TOP TEXT -->
+                            <textarea name="top-text" id="textareaTop" rows="1">TOP TEXT</textarea>
                         </div>
                     </label>
                     <label>
+                        <!-- CHECKBOX TOP TEXT -->
                         <input type="checkbox" name="sin-superior" id="top-text-checkbox">
                         Sin texto superior
                     </label>
-                    <!-- LOWER -->
                     <p class="letter-subtittle">
                         INFERIOR
                     </p>
                     <label>
                         <div class="container-input container-input-dark">
-                            <textarea name="bottom-text" id="textareaBottom" cols="26" rows="1">TEXTO INFERIOR</textarea>
+                            <!-- TEXTAREA BOTTOM TEXT -->
+                            <textarea name="bottom-text" id="textareaBottom" rows="1">BOTTOM TEXT</textarea>
                         </div>
                     </label>
                     <label>
+                        <!-- CHECKBOX BOTTOM TEXT -->
                         <input type="checkbox" name="sin-inferior" id="bottom-text-checkbox">
                         Sin texto inferior
                     </label>
-                    <!-- FONT -->
                     <p class="letter-subtittle">
                         FUENTE
                     </p>
                     <label>
-                        <select name="font-family" id="font-selector">
+                        <!-- SELECT FONT -->
+                        <select name="font-family" id="font-select">
                             <option value="Arial">Arial</option>
                             <option value="Arial">Arial Black</option>
                             <option value="American Typewriter">American Typewriter</option>
@@ -148,8 +163,10 @@
                     </label>
                     <div class="flex-container">
                         <label>
+                            <!-- INPUT FONT SIZE -->
                             <input type="number" value="40" min="12" class="number-font" id="font-size-input">
                         </label>
+                        <!-- BUTTON TEXT ALIGNMENT -->
                         <button type="button" class="button-justify" id="button-star">
                             <i class="fa-solid fa-outdent"></i>
                         </button>
@@ -160,7 +177,6 @@
                             <i class="fa-solid fa-indent"></i>
                         </button>
                     </div>
-                    <!-- COLOR -->
                     <div class="flex-container space">
                         <div class="column">
                             <p class="letter-subtittle">
@@ -168,6 +184,7 @@
                             </p>
                             <label>
                                 <div class="container-input container-input-dark type-color" id="color-letter">
+                                    <!-- INPUT COLOR LETTERS -->
                                     <input type="color"> <span>#000000</span>
                                 </div>
                             </label>
@@ -178,39 +195,41 @@
                             </p>
                             <label>
                                 <div class="container-input container-input-dark type-color">
+                                    <!-- INPUT LETTERS BACKGROUND COLOR -->
                                     <input type="color" value="#FFFFFF" id="color-letter-background"> <span>#FFFFFF</span>
                                 </div>
                             </label>
                         </div>
                     </div>
                     <label>
-                        <input type="checkbox" name="background-checkbox" id="background-checkbox">
+                        <!-- CHECKBOX TRANSPARENT -->
+                        <input type="checkbox" name="background-checkbox" id="transparent-checkbox">
                         Fondo transparente
                     </label>
-                    <!-- OUTLINE TEXT -->
                     <div>
                         <p class="letter-subtittle">
                             CONTORNO
                         </p>
-                        <div class="flex-container">
+                        <div class="flex-container container-outline">
+                            <!-- BUTTONS LETTERS OUTLINE -->
                             <button type="button" class="button-outline" id="button-none">Ninguno</button>
                             <button type="button" class="button-outline" id="button-light">Claro</button>
                             <button type="button" class="button-outline" id="button-dark">Oscuro</button>
                         </div>
                     </div>
-                    <!-- SPACING -->
                     <p class="letter-subtittle">
                         ESPACIADO
                     </p>
                     <label>
+                        <!-- INPUT SPACING -->
                         <input type="number" min="10" max="50" value="35" class="number-spacing" id="spacing-input">
                     </label>
-                    <!-- LEADING -->
                     <p class="letter-subtittle">
                         INTERLINEADO
                     </p>
                     <label>
-                        <select name="line-select" id="line-select">
+                        <!-- SELECT LINE HEIGHT -->
+                        <select name="line-height-select" id="line-height-select">
                             <option value="0.8">0.8</option>
                             <option value="1">1</option>
                             <option value="1.2" selected>1.2</option>
@@ -225,10 +244,10 @@
     </div>
     
     <div class="flex-container content">
-        <!-- HEADER -->
+        <!-- ### HEADER ### -->
         <header class="flex-container column header-dark">
             <h1>Generador de Memes</h1>
-            <div class="flex-container container-button">
+            <div class="flex-container container-button-header">
                 <!-- BUTTON IMAGE -->
                 <button class="button-header button-dark" id="button-image">
                     <i class="fa-solid fa-file-image"></i>
@@ -251,28 +270,30 @@
                 </button>
             </div>
         </header>
-        <!-- MAIN -->
+        <!-- ### MAIN ### -->
         <main class="flex-container column main-dark">
-
             <div class="container-meme" id="container-meme">
+                <!-- TOP TEXT CONTAINER -->
                 <div class="flex-container container-text" id="container-text-top">
-                    <p id="top-text">TEXTO SUPERIOR</p>
+                    <p id="top-text">TOP TEXT</p>
                 </div>
+                <!-- CONTAINER MEME IMAGE -->
                 <div class="container-meme-img" id="container-meme-img">
                     <div id="image-meme">
                         <!-- IMAGE MEME -->
                     </div>
                 </div>
+                <!-- BOTTOM TEXT CONTAINER -->
                 <div class="flex-container container-text" id="container-text-bottom">
-                    <p id="bottom-text">TEXTO INFERIOR</p>
+                    <p id="bottom-text">BOTTOM TEXT</p>
                 </div>
             </div>
-
             <!-- DOWNLOAD BUTTON -->
             <button class="button-download" id="button-download">
                 <i class="fa-solid fa-download"></i>
                 Descargar meme
             </button>
+            <span class="warning">(Las imágenes que esten sujetas a derechos de autor no se podrán descargar)</span>
         </main>
     </div>
 

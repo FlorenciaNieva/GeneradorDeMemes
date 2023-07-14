@@ -33,33 +33,6 @@
     display: none;
 }
 
-/* ASIDE */
-aside {
-    padding-top: 45px;
-    padding-bottom: 60px;
-    position: absolute;
-    width: 250px;
-}
-
-.reverse {
-    display: flex;
-    flex-direction: row-reverse;
-}
-
-.aside-dark {
-    background-color: #252935;
-    color: white;
-}
-
-.aside-light {
-    background-color: #fafafa;
-    color: #626262;
-}
-
-h3 {
-    text-align: center;
-}
-
 /* HEADER */
 header {
     height: 19vh;
@@ -75,7 +48,7 @@ header {
     color: #424242;
 }
 
-.container-button {
+.container-button-header {
     flex-direction: row;
 } 
 
@@ -102,9 +75,7 @@ header {
     background-color: #e0e0e0;
     color: #424242;
 }
-
-/*  */
-/*  */
+/* END HEADER */
 
 /* MAIN */
 .main-dark {
@@ -117,16 +88,17 @@ header {
 
 .container-meme {
     background-color: black;
-    width: 44%;
+    width: 550px;
     justify-content: space-between;
     position: relative;
 }
 
 .container-text {
-    padding: 35px 50px 35px 50px;
+    padding: 25px 50px;
     background-color: white;
     font-size: 40px;
     font-weight: 900;
+    text-align: center;
 }
 
 #top-text {
@@ -138,7 +110,7 @@ header {
 }
 
 .container-meme-img {
-    height: 375px;
+    height: 300px;
 }
 
 #image-meme {
@@ -165,6 +137,51 @@ header {
 
 .button-download:hover, .button-download:focus {
     background-color: #449049;
+}
+
+.warning {
+    font-size: 13px; 
+    color: rgb(129, 128, 128);
+}
+/* END MAIN */
+
+/* ASIDE */
+aside {
+    width: 250px;
+    padding-top: 45px;
+    padding-bottom: 60px;
+    position: absolute;
+    z-index: 1;
+}
+
+.reverse {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.aside-dark {
+    background-color: #252935;
+    color: white;
+}
+
+.aside-light {
+    background-color: #fafafa;
+    color: #626262;
+}
+
+.button-x {
+    display: none;
+    border: none;
+    color: white;
+    background-color: transparent;
+    position: absolute;
+    font-size: 18px;
+    right: 10px;
+    top: 20px;
+}
+
+h3 {
+    text-align: center;
 }
 
 /* FORM */
@@ -299,6 +316,8 @@ textarea {
     padding: 10px;
     border: none;
     outline: none;
+    resize: vertical;
+    width: 100%;
 }
 
 .number-font {
@@ -307,6 +326,7 @@ textarea {
     border-radius: 5px;
     color: white;
     width: 110px;
+    margin: 5px 0px 0px 0px;
 }
 
 .number-font:hover, .number-font:focus {
@@ -317,7 +337,7 @@ textarea {
     outline: none;
     background-color: #3b3f486f;
     color: white;
-    margin: 3px;
+    margin: 5px 0px 0px 5px;
     padding: 10px 9px;
     border-radius: 5px;
     border: none;
@@ -357,4 +377,96 @@ textarea {
 
 .number-spacing:hover, .number-spacing:focus {
     background-color: #969696c0;
+}
+/* END ASIDE */
+
+/* MEDIAS QUERIES */
+@media (max-width: 1299px) {
+    .aside-hidden {
+        display: none;
+    }
+    .button-x {
+        display: flex;
+    }
+}
+
+@media (max-width: 700px) {
+    aside {
+        width: 100vw;
+    }
+    .container-text {
+        font-size: 35px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    form {
+        width: 95vw;
+    }
+    .type-color {
+        width: 47vw;
+    }
+    .select-background {
+        width: 47vw;
+    }
+    .number-font {
+        width: 50vw;
+    }
+    .button-justify {
+        width: 15vw;
+    }
+    .container-outline {
+        justify-content: start;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 650px) {
+    .container-meme {
+        width: 85vw;
+    }
+    .container-text {
+        font-size: 30px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+}
+
+@media (max-width: 550px) {
+    .container-text {
+        font-size: 25px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+} 
+
+@media (max-width: 400px) {
+    .container-text {
+        font-size: 20px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+} 
+
+@media (max-width: 325px) {
+    h1 {
+        text-align: center;
+        font-size: 25px;
+    }
+} 
+
+@media (max-width: 290px) {
+    header {
+        height: 30vh;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    .container-button-header {
+        flex-wrap: wrap;
+    }
+    .container-text {
+        font-size: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
 }
