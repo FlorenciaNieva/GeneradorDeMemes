@@ -14,6 +14,11 @@
     ></script>
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+    <meta property="og:title" content="Editor De Memes">
+    <meta property="og:description" content="Crea y edita tus propios memes con esta página web">
+    <meta property="og:image" content="https://www.reiniciado.net/wp-content/uploads/2016/04/Las-5-mejores-aplicaciones-para-crear-memes.jpg">
+    <meta property="og:site-name" content="Editor de memes">
+    <meta property="og:type" content="website">
 </head>
 <body class="body-dark">
     <!-- ### ASIDE ### -->
@@ -22,8 +27,8 @@
             <!-- /// SECTION IMAGE /// -->
             <section id="aside-image">
                 <!-- BUTTON X -->
-                <button type="button" class="button-x" id="image-button-x">
-                    <i class="fa-regular fa-circle-xmark"></i>
+                <button type="button" class="button-x" id="image-button-x" aria-label="Cerrar panel de imagen">
+                    <i class="fa-regular fa-circle-xmark" aria-hidden="true"></i>
                 </button>
                 <h3>IMAGEN</h3>
                 <form>
@@ -31,9 +36,9 @@
                         URL
                     </p>
                     <label>
-                        <div class="container-input container-input-dark">
+                        <div class="">
                             <!-- INPUT URL -->
-                            <input type="url" id="url-image" autocomplete="off">
+                            <input type="url" id="url-image" autocomplete="off" aria-label="URL de la imagen">
                         </div>
                     </label>
                     <div class="flex-container column">
@@ -42,14 +47,14 @@
                         </p>
                         <div class="flex-container">
                             <label>
-                                <div class="container-input container-input-dark type-color">
+                                <div class="container-input-color">
                                     <!-- INPUT CONTAINER BACKGROUND-COLOR -->
-                                    <input type="color" id="container-meme-color"> <span>#000000</span>
+                                    <input type="color" id="container-meme-color" aria-label="Color de fondo de la imagen"> <span aria-hidden="true">#000000</span>
                                 </div>
                             </label>
                             <label class="select-background">
                                 <!-- SECTION MIX-COLOR -->
-                                <select name="mix-color" id="mix-color">
+                                <select name="mix-color" id="mix-color" aria-label="Mezcla de colores del fondo con la imagen">
                                     <option value="unset" selected>Ninguno</option>
                                     <option value="lighten">Aclarar</option>
                                     <option value="darken">Oscurecer</option>
@@ -111,8 +116,8 @@
             <!-- /// SECTION TEXT /// -->
             <section class="hidden" id="aside-text">
                 <!-- BUTTON X -->
-                <button type="button" class="button-x" id="text-button-x">
-                    <i class="fa-regular fa-circle-xmark"></i>
+                <button type="button" class="button-x" id="text-button-x" aria-label="Cerrar panel de texto">
+                    <i class="fa-regular fa-circle-xmark" aria-hidden="true"></i>
                 </button>
                 <h3>TEXTO</h3>
                 <form>
@@ -120,9 +125,9 @@
                         SUPERIOR
                     </p>
                     <label>
-                        <div class="container-input container-input-dark">
+                        <div>
                             <!-- TEXTAREA TOP TEXT -->
-                            <textarea name="top-text" id="textareaTop" rows="1">TOP TEXT</textarea>
+                            <textarea name="top-text" id="textareaTop" rows="1" aria-label="Texto superior">TOP TEXT</textarea>
                         </div>
                     </label>
                     <label>
@@ -134,9 +139,9 @@
                         INFERIOR
                     </p>
                     <label>
-                        <div class="container-input container-input-dark">
+                        <div>
                             <!-- TEXTAREA BOTTOM TEXT -->
-                            <textarea name="bottom-text" id="textareaBottom" rows="1">BOTTOM TEXT</textarea>
+                            <textarea name="bottom-text" id="textareaBottom" rows="1" aria-label="Texto inferior">BOTTOM TEXT</textarea>
                         </div>
                     </label>
                     <label>
@@ -149,7 +154,7 @@
                     </p>
                     <label>
                         <!-- SELECT FONT -->
-                        <select name="font-family" id="font-select">
+                        <select name="font-family" id="font-select" aria-label="Fuentes">
                             <option value="Arial">Arial</option>
                             <option value="Arial">Arial Black</option>
                             <option value="American Typewriter">American Typewriter</option>
@@ -164,17 +169,17 @@
                     <div class="flex-container">
                         <label>
                             <!-- INPUT FONT SIZE -->
-                            <input type="number" value="40" min="12" class="number-font" id="font-size-input">
+                            <input type="number" value="40" min="12" class="number-font" id="font-size-input" aria-label="Tamaño de fuente">
                         </label>
                         <!-- BUTTON TEXT ALIGNMENT -->
-                        <button type="button" class="button-justify" id="button-star">
-                            <i class="fa-solid fa-outdent"></i>
+                        <button type="button" class="button-justify" id="button-star" aria-label="Alinear texto al comienzo">
+                            <i class="fa-solid fa-outdent" aria-hidden="true"></i>
                         </button>
-                        <button type="button" class="button-justify" id="button-center">
-                            <i class="fa-solid fa-align-justify"></i>
+                        <button type="button" class="button-justify" id="button-center" aria-label="Alinear texto al centro">
+                            <i class="fa-solid fa-align-justify" aria-hidden="true"></i>
                         </button>
-                        <button type="button" class="button-justify" id="button-end">
-                            <i class="fa-solid fa-indent"></i>
+                        <button type="button" class="button-justify" id="button-end" aria-label="Alinear texto al final">
+                            <i class="fa-solid fa-indent" aria-hidden="true"></i>
                         </button>
                     </div>
                     <div class="flex-container space">
@@ -183,9 +188,9 @@
                                 COLOR
                             </p>
                             <label>
-                                <div class="container-input container-input-dark type-color" id="color-letter">
+                                <div class="container-input-color">
                                     <!-- INPUT COLOR LETTERS -->
-                                    <input type="color"> <span>#000000</span>
+                                    <input type="color" id="color-letter" aria-label="Color del texto"> <span aria-hidden="true">#000000</span>
                                 </div>
                             </label>
                         </div>
@@ -194,9 +199,9 @@
                                 FONDO
                             </p>
                             <label>
-                                <div class="container-input container-input-dark type-color">
+                                <div class="container-input-color">
                                     <!-- INPUT LETTERS BACKGROUND COLOR -->
-                                    <input type="color" value="#FFFFFF" id="color-letter-background"> <span>#FFFFFF</span>
+                                    <input type="color" value="#FFFFFF" id="color-letter-background" aria-label="Color del fondo del texto"> <span aria-hidden="true">#FFFFFF</span>
                                 </div>
                             </label>
                         </div>
@@ -222,14 +227,14 @@
                     </p>
                     <label>
                         <!-- INPUT SPACING -->
-                        <input type="number" min="10" max="50" value="35" class="number-spacing" id="spacing-input">
+                        <input type="number" min="10" max="50" value="35" class="number-spacing" id="spacing-input" aria-label="Espacio del contenedor del texto">
                     </label>
                     <p class="letter-subtittle">
                         INTERLINEADO
                     </p>
                     <label>
                         <!-- SELECT LINE HEIGHT -->
-                        <select name="line-height-select" id="line-height-select">
+                        <select name="line-height-select" id="line-height-select" aria-label="Interlineado">
                             <option value="0.8">0.8</option>
                             <option value="1">1</option>
                             <option value="1.2" selected>1.2</option>
@@ -249,23 +254,23 @@
             <h1>Generador de Memes</h1>
             <div class="flex-container container-button-header">
                 <!-- BUTTON IMAGE -->
-                <button class="button-header button-dark" id="button-image">
-                    <i class="fa-solid fa-file-image"></i>
+                <button class="button-header button-dark" id="button-image" aria-label="Abrir panel para modificar la imagen">
+                    <i class="fa-solid fa-file-image" aria-hidden="true"></i>
                     Imagen
                 </button>
                 <!-- BUTTON TEXT -->
-                <button class="button-header button-dark" id="button-text">
-                    <i class="fa-solid fa-font"></i>
+                <button class="button-header button-dark" id="button-text"  aria-label="Abrir panel para modificar el texto">
+                    <i class="fa-solid fa-font" aria-hidden="true"></i>
                     Texto
                 </button>
-                <!-- DARK MODE BUTTON -->
-                <button class="button-header button-dark" id="button-mode-dark">
-                    <i class="fa-regular fa-lightbulb"></i>
+                <!-- LIGHT MODE BUTTON -->
+                <button class="button-header button-dark" id="button-mode-dark" aria-label="Cambiar a modo claro">
+                    <i class="fa-regular fa-lightbulb" aria-hidden="true"></i>
                     Modo claro
                 </button>
-                <!-- LIGHT MODE BUTTON  -->
-                <button class="button-header button-light hidden" id="button-mode-light">
-                    <i class="fa-solid fa-lightbulb"></i>
+                <!-- DARK MODE BUTTON  -->
+                <button class="button-header button-light hidden" id="button-mode-light" aria-label="Cambiar a modo oscuro">
+                    <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
                     Modo oscuro
                 </button>
             </div>
@@ -279,7 +284,7 @@
                 </div>
                 <!-- CONTAINER MEME IMAGE -->
                 <div class="container-meme-img" id="container-meme-img">
-                    <div id="image-meme">
+                    <div id="image-meme" aria-label="Imagen del meme">
                         <!-- IMAGE MEME -->
                     </div>
                 </div>
@@ -290,7 +295,7 @@
             </div>
             <!-- DOWNLOAD BUTTON -->
             <button class="button-download" id="button-download">
-                <i class="fa-solid fa-download"></i>
+                <i class="fa-solid fa-download" aria-hidden="true"></i>
                 Descargar meme
             </button>
             <span class="warning">(Las imágenes que esten sujetas a derechos de autor no se podrán descargar)</span>

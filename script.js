@@ -69,6 +69,8 @@ const modeLight = () => {
     buttonImage.classList.add('button-light');
     buttonModeDark.classList.add('hidden');
     buttonModeLight.classList.remove('hidden');
+    textButtonX.style.color = '#626262';
+    imageButtonX.style.color = '#626262';
 }
 
 const modeDark = () => {
@@ -80,6 +82,8 @@ const modeDark = () => {
     buttonImage.classList.remove('button-light');
     buttonModeLight.classList.add('hidden');
     buttonModeDark.classList.remove('hidden');
+    textButtonX.style.color = 'white';
+    imageButtonX.style.color = 'white';
 }
 
 const downloadMeme = () => {
