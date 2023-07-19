@@ -16,8 +16,8 @@ const bottomText = document.getElementById('bottom-text');
 const buttonDownload = document.getElementById('button-download');
 const asideImage = document.getElementById('aside-image');
 const asideText = document.getElementById('aside-text');
-const imageButtonX = document.getElementById('image-button-x');
-const textButtonX = document.getElementById('text-button-x');
+const buttonCloseImage = document.getElementById('button-close-image');
+const buttonCloseText = document.getElementById('button-close-text');
 const url = document.getElementById('url-image');
 const colorContainerImg = document.getElementById('container-meme-color');
 const span = document.getElementsByTagName('span');
@@ -69,8 +69,8 @@ const modeLight = () => {
     buttonImage.classList.add('button-light');
     buttonModeDark.classList.add('hidden');
     buttonModeLight.classList.remove('hidden');
-    textButtonX.style.color = '#626262';
-    imageButtonX.style.color = '#626262';
+    buttonCloseText.style.color = '#626262';
+    buttonCloseImage.style.color = '#626262';
 }
 
 const modeDark = () => {
@@ -82,8 +82,8 @@ const modeDark = () => {
     buttonImage.classList.remove('button-light');
     buttonModeLight.classList.add('hidden');
     buttonModeDark.classList.remove('hidden');
-    textButtonX.style.color = 'white';
-    imageButtonX.style.color = 'white';
+    buttonCloseText.style.color = 'white';
+    buttonCloseImage.style.color = 'white';
 }
 
 const downloadMeme = () => {
@@ -258,8 +258,8 @@ buttonText.addEventListener('click', () => buttonImageHidden());
 buttonModeLight.addEventListener('click', () => modeDark());
 buttonModeDark.addEventListener('click', () => modeLight());
 buttonDownload.addEventListener("click", () => downloadMeme());
-imageButtonX.addEventListener('click', () => asideHidden());
-textButtonX.addEventListener('click', () => asideHidden());
+buttonCloseImage.addEventListener('click', () => asideHidden());
+buttonCloseText.addEventListener('click', () => asideHidden());
 buttonImage.addEventListener('click', () => asideVisible());
 buttonText.addEventListener('click', () => asideVisible());
 url.addEventListener("input", () => imageMeme());

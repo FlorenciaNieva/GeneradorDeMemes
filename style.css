@@ -26,6 +26,7 @@
 .content {
     flex-direction: column;
     align-items: normal;
+    text-align: center;
     width: 100%;
 }
 
@@ -202,7 +203,7 @@ input {
 input[type="url"] {
     background-color: #3b3f486f;
     color: white;
-    width: 95%;
+    width: 100%;
     padding: 10px;
     margin: 10px 0px;
     border-radius: 5px;
@@ -227,7 +228,7 @@ input[type="url"]:hover, input[type="url"]:focus {
     border-radius: 5px;
 }
 
-.container-input-color:hover {
+.container-input-color:hover, .container-input-color:focus-within {
     background-color: #969696c0;
 }
 
@@ -399,6 +400,11 @@ textarea:hover, textarea:focus {
     }
     .button-x {
         display: flex;
+        outline: none;
+    }
+    .button-x:focus .fa-circle-xmark {
+        font-size: 20px;
+        text-shadow: 0 0 0.2em rgb(255, 255, 255);
     }
 }
 
@@ -414,7 +420,7 @@ textarea:hover, textarea:focus {
     form {
         width: 95vw;
     }
-    .type-color {
+    .container-input-color {
         width: 47vw;
     }
     .select-background {
@@ -446,8 +452,6 @@ textarea:hover, textarea:focus {
 @media (max-width: 550px) {
     .container-text {
         font-size: 25px;
-        padding-top: 20px;
-        padding-bottom: 20px;
     }
 } 
 
