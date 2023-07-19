@@ -5,11 +5,11 @@
 }
 
 .body-dark {
-    background-color: #30343F;
+    background-color: #01a287;
 }
 
 .body-light {
-    background-color: #eeeeee;
+    background-color: #74FFF3;
 }
 
 .flex-container {
@@ -40,13 +40,13 @@ header {
 }
 
 .header-dark {
-    background-color: #191e2b;
+    background-color: #0c7b69;
     color: white;
 }
 
 .header-light {
-    background-color: #e0e0e0;
-    color: #424242;
+    background-color: #00DBC6;
+    color: #efefef;
 }
 
 .container-button-header {
@@ -64,27 +64,27 @@ header {
 }
 
 .button-header:focus, .button-header:hover {
-    background-color: #969696c0;
+    background-color: #6a918bc0;
 }
 
 .button-dark {
-    background-color: #191e2b;
+    background-color: #0c7b69;
     color: white;
 }
 
 .button-light {
-    background-color: #e0e0e0;
-    color: #424242;
+    background-color: #00DBC6;
+    color: #efefef;
 }
 /* END HEADER */
 
 /* MAIN */
 .main-dark {
-    background-color: #30343F;
+    background-color: #01a287;
 }
 
 .main-light {
-    background-color: #eeeeee;
+    background-color: #74FFF3;
 }
 
 .container-meme {
@@ -100,6 +100,7 @@ header {
     font-size: 40px;
     font-weight: 900;
     text-align: center;
+    z-index: 2;
 }
 
 #top-text {
@@ -120,12 +121,13 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: 3;
 }
 
 .button-download {
     margin: 20px;
     padding: 15px 20px ;
-    background-color: #2e7d32;
+    background-color: #2ec435;
     color: white;
     border: none;
     border-radius: 5px;
@@ -137,12 +139,12 @@ header {
 }
 
 .button-download:hover, .button-download:focus {
-    background-color: #449049;
+    background-color: #51d95a;
 }
 
 .warning {
     font-size: 13px; 
-    color: rgb(129, 128, 128);
+    padding-bottom: 30px;
 }
 /* END MAIN */
 
@@ -161,19 +163,19 @@ aside {
 }
 
 .aside-dark {
-    background-color: #252935;
+    background-color: #1e8a78;
     color: white;
 }
 
 .aside-light {
-    background-color: #fafafa;
-    color: #626262;
+    background-color: #03bfac;
+    color: #efefef;
 }
 
 .button-x {
     display: none;
     border: none;
-    color: white;
+    color: #efefef;
     background-color: transparent;
     position: absolute;
     font-size: 18px;
@@ -210,7 +212,7 @@ input[type="url"] {
 }
 
 input[type="url"]:hover, input[type="url"]:focus {
-    background-color: #969696c0;
+    background-color: #6a918bc0;
 }
 
 .letter-subtittle {
@@ -229,7 +231,7 @@ input[type="url"]:hover, input[type="url"]:focus {
 }
 
 .container-input-color:hover, .container-input-color:focus-within {
-    background-color: #969696c0;
+    background-color: #6a918bc0;
 }
 
 input[type='color'] {
@@ -261,7 +263,7 @@ select {
 }
 
 select:hover, select:focus {
-    background-color: #969696c0;
+    background-color: #6a918bc0;
 }
 
 .select-background {
@@ -314,7 +316,7 @@ input[type='range']:focus::-webkit-slider-runnable-track {
 }
 
 .button-reset:hover, .button-reset:focus {
-    background-color: #969696c0;
+    background-color: #6a918bc0;
 }
 
 textarea {
@@ -330,7 +332,7 @@ textarea {
 
 textarea:hover, textarea:focus {
     outline: none;
-    background-color: #969696c0;
+    background-color: #6a918bc0;
 }
 
 .number-font {
@@ -343,7 +345,7 @@ textarea:hover, textarea:focus {
 }
 
 .number-font:hover, .number-font:focus {
-    background-color: #969696c0;
+    background-color: #6a918bc0;
 }
 
 .button-justify {
@@ -357,7 +359,7 @@ textarea:hover, textarea:focus {
 }
 
 .button-justify:hover, .button-justify:focus {
-    background-color: #969696c0;
+    background-color: #6a918bc0;
 }
 
 .space {
@@ -376,7 +378,7 @@ textarea:hover, textarea:focus {
 }
 
 .button-outline:hover, .button-outline:focus {
-    background-color: #969696c0;
+    background-color: #6a918bc0;
 }
 
 .number-spacing {
@@ -389,7 +391,7 @@ textarea:hover, textarea:focus {
 }
 
 .number-spacing:hover, .number-spacing:focus {
-    background-color: #969696c0;
+    background-color: #6a918bc0;
 }
 /* END ASIDE */
 
@@ -413,6 +415,7 @@ textarea:hover, textarea:focus {
         width: 100vw;
     }
     .container-text {
+        text-align: center;
         font-size: 35px;
         padding-top: 30px;
         padding-bottom: 30px;

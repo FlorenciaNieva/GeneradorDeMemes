@@ -49,6 +49,7 @@ const buttonLight = document.getElementById('button-light');
 const buttonDark = document.getElementById('button-dark');
 const spacingInput = document.getElementById('spacing-input');
 const lineSelect = document.getElementById('line-height-select');
+const warning = document.getElementById('warning');
 
 const buttonTextHidden = () => {
     asideText.classList.add('hidden');
@@ -69,8 +70,7 @@ const modeLight = () => {
     buttonImage.classList.add('button-light');
     buttonModeDark.classList.add('hidden');
     buttonModeLight.classList.remove('hidden');
-    buttonCloseText.style.color = '#626262';
-    buttonCloseImage.style.color = '#626262';
+    warning.style.color = 'black';
 }
 
 const modeDark = () => {
@@ -82,8 +82,7 @@ const modeDark = () => {
     buttonImage.classList.remove('button-light');
     buttonModeLight.classList.add('hidden');
     buttonModeDark.classList.remove('hidden');
-    buttonCloseText.style.color = 'white';
-    buttonCloseImage.style.color = 'white';
+    warning.style.color = 'white';
 }
 
 const downloadMeme = () => {
