@@ -413,6 +413,7 @@ textarea:hover, textarea:focus {
 @media (max-width: 700px) {
     aside {
         width: 100vw;
+        height: 100vh;
     }
     .container-text {
         text-align: center;
