@@ -100,7 +100,6 @@ header {
     font-size: 40px;
     font-weight: 900;
     text-align: center;
-    z-index: 2;
 }
 
 #top-text {
@@ -121,7 +120,6 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: 3;
 }
 
 .button-download {
@@ -223,6 +221,7 @@ input[type="url"]:hover, input[type="url"]:focus {
 }
 
 .container-input-color {
+    display: flex;
     align-items: center;
     margin: 10px 0px;
     padding: 1px 15px 1px 5px;
